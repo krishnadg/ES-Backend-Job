@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nest;
+using Elasticsearch;
 using ESClassLib;
 
 
 
 namespace ESTests
 {
+    public class PkiCluster : Ce
+
 
     public class ESSetup
     {
@@ -23,7 +26,7 @@ namespace ESTests
         {
             node = new Uri("http://localhost:9200");
             settings = new ConnectionSettings(node);
-          //  settings.DefaultIndex("fake_es");
+            settings.DefaultIndex("fake_es");
             client = new ElasticClient(settings);
 
             var indexSettings = new IndexSettings();
@@ -36,17 +39,26 @@ namespace ESTests
             };
             
             
-            client.CreateIndex("Team1", c => c.InitializeUsing(indexConfig).Mappings(m => m.Map<TeamData>(mp => mp.AutoMap())));
-            client.CreateIndex("Team2", c => c.InitializeUsing(indexConfig).Mappings(m => m.Map<TeamData>(mp => mp.AutoMap())));
-            client.CreateIndex("Team3", c => c.InitializeUsing(indexConfig).Mappings(m => m.Map<TeamData>(mp => mp.AutoMap())));
-            client.CreateIndex("Team4", c => c.InitializeUsing(indexConfig).Mappings(m => m.Map<TeamData>(mp => mp.AutoMap())));
-            client.CreateIndex("Team5", c => c.InitializeUsing(indexConfig).Mappings(m => m.Map<TeamData>(mp => mp.AutoMap())));
-            client.CreateIndex("Team6", c => c.InitializeUsing(indexConfig).Mappings(m => m.Map<TeamData>(mp => mp.AutoMap())));
+          
 
-
-
-          //  client.CreateIndex(c => c.Index("fake_es").InitializeUsing(indexSettings).AddMapping<TeamData>(m => m.MapFromAttributes()));
+        //client.CreateIndex(c => c.Index("Team1").InitializeUsing(indexSettings).AddMapping<TeamData>(m => m.MapFromAttributes()));
+        //  client.CreateIndex(c => c.Index("fake_es").InitializeUsing(indexSettings).AddMapping<TeamData>(m => m.MapFromAttributes()));
         }
+
+        public static void AddIndex(string indexName)
+        {
+            var indexSettings = new IndexSettings();
+            indexSettings.NumberOfReplicas = 1;
+            indexSettings.NumberOfShards = 1;
+
+            var indexConfig = new IndexState
+            {
+                Settings = indexSettings
+            };
+            client.CreateIndex(indexName, c => c.InitializeUsing(indexConfig).Mappings(m => m.Map<TeamData>(mp => mp.AutoMap())));
+        }
+
+
 
         public static void AddFakeDataIndexes()
         {
@@ -56,77 +68,10 @@ namespace ESTests
                 numberOfDocs = "123456",
                 totalStoreSize = "100000",
                 primaryStoreSize = "5000",
-                
 
             };
             
-            /* 
-            var result = client.GetIndex("Team1");
-            
-            var result2 = client.Search<dynamic>(s => s
-                .AllIndices()
-                .AllTypes());
-            
-            
-            var result = client.CatIndices();
-            var list = result.Records.ToList();
 
-            foreach (CatIndicesRecord indexRecord in list)
-            {
-                indexRecord.Index
-            }
-
-            TeamData team2 = new TeamData()
-            {
-                teamName = "Team2",
-                numberOfDocs = 654321,
-                totalStoreSize = 200000,
-                primaryStoreSize = 10000,
-                
-
-            };
-
-            TeamData team3 = new TeamData()
-            {
-                teamName = "Team3",
-                numberOfDocs = 10000,
-                totalStoreSize = 200000,
-                primaryStoreSize = 10000,
-                
-
-            };
-
-             TeamData team4 = new TeamData()
-            {
-                teamName = "Team4",
-                numberOfDocs = 123456,
-                totalStoreSize = 100000,
-                primaryStoreSize = 5000,
-                
-
-            };
-
-            TeamData team5 = new TeamData()
-            {
-                teamName = "Team5",
-                numberOfDocs = 654321,
-                totalStoreSize = 200000,
-                primaryStoreSize = 10000,
-                
-
-            };
-
-            TeamData team6 = new TeamData()
-            {
-                teamName = "Team6",
-                numberOfDocs = 10000,
-                totalStoreSize = 200000,
-                primaryStoreSize = 10000,
-                
-
-            };
-
-            */
 
         }
 

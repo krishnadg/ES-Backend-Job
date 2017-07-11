@@ -1,6 +1,5 @@
 
 using System;
-using System.Linq;
 using Nest;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +22,8 @@ namespace ESClassLib
         public string GetTeamName(string fullIndex)
         {
 
-
+            teamName = fullIndex;
+            
             int indexOfUnderscore = fullIndex.IndexOf('_');
 
             if (indexOfUnderscore > 0)

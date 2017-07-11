@@ -16,7 +16,13 @@ namespace ESClassLib
         public string primaryStoreSize {get; set;}
 
 
-
+        public TeamData()
+        {
+            teamName = " ";
+            numberOfDocs = "0";
+            totalStoreSize = "";
+            primaryStoreSize = "0";
+        }
         
     }
 }
