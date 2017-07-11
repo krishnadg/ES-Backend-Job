@@ -1,0 +1,13 @@
+/Users/brf4/Desktop/ESJob/ESTests/bin/Debug/netcoreapp1.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/brf4/Desktop/ESJob/ESTests/bin/Debug/netcoreapp1.1/xunit.runner.utility.netstandard15.dll
+/Users/brf4/Desktop/ESJob/ESTests/bin/Debug/netcoreapp1.1/xunit.runner.reporters.netstandard15.dll
+/Users/brf4/Desktop/ESJob/ESTests/bin/Debug/netcoreapp1.1/ESTests.deps.json
+/Users/brf4/Desktop/ESJob/ESTests/bin/Debug/netcoreapp1.1/ESTests.runtimeconfig.json
+/Users/brf4/Desktop/ESJob/ESTests/bin/Debug/netcoreapp1.1/ESTests.runtimeconfig.dev.json
+/Users/brf4/Desktop/ESJob/ESTests/bin/Debug/netcoreapp1.1/ESTests.dll
+/Users/brf4/Desktop/ESJob/ESTests/bin/Debug/netcoreapp1.1/ESTests.pdb
+/Users/brf4/Desktop/ESJob/ESTests/bin/Debug/netcoreapp1.1/ESClassLib.dll
+/Users/brf4/Desktop/ESJob/ESTests/bin/Debug/netcoreapp1.1/ESClassLib.pdb
+/Users/brf4/Desktop/ESJob/ESTests/obj/Debug/netcoreapp1.1/ESTests.AssemblyInfo.cs
+/Users/brf4/Desktop/ESJob/ESTests/obj/Debug/netcoreapp1.1/ESTests.dll
+/Users/brf4/Desktop/ESJob/ESTests/obj/Debug/netcoreapp1.1/ESTests.pdb

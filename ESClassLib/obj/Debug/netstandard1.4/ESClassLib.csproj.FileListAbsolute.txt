@@ -1,0 +1,6 @@
+/Users/brf4/Desktop/ESJob/ESClassLib/bin/Debug/netstandard1.4/ESClassLib.deps.json
+/Users/brf4/Desktop/ESJob/ESClassLib/bin/Debug/netstandard1.4/ESClassLib.dll
+/Users/brf4/Desktop/ESJob/ESClassLib/bin/Debug/netstandard1.4/ESClassLib.pdb
+/Users/brf4/Desktop/ESJob/ESClassLib/obj/Debug/netstandard1.4/ESClassLib.AssemblyInfo.cs
+/Users/brf4/Desktop/ESJob/ESClassLib/obj/Debug/netstandard1.4/ESClassLib.dll
+/Users/brf4/Desktop/ESJob/ESClassLib/obj/Debug/netstandard1.4/ESClassLib.pdb
